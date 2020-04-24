@@ -355,10 +355,10 @@ class hr_payslip(osv.osv):
                                 else:
                                     
                                     leaves[leave_type.name] = {
-                                        'name': leave_type.name,
+                                        'name': leave_type.name if leave_type.name else leave_type.holiday_status_id.name,
                                         'sequence': 5,
                                         'code': leave_type.holiday_status_id.name,
-                                        'number_of_days': 1,
+                                        'number_of_days': 0,
                                         #'number_of_hours': working_hours_on_day,
                                         'number_of_hours': leave_type.number_of_hours_temp,
                                         'contract_id': contract.id,
