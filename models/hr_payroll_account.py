@@ -263,9 +263,11 @@ class hr_payslip(osv.osv):
             else:
                 nb_of_days = (day_to - day_from).days + 1
           
+
             in_id = []
             ignore_days = {}
-            for day in range(0, nb_of_days):
+            for day in range(0, nb_of_days+1):
+                print(day)
                 if contract.date_end:
                     contract_date = contract.date_end
                 else:
