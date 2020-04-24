@@ -357,7 +357,8 @@ class hr_payslip(osv.osv):
                                         'sequence': 5,
                                         'code': leave_type.holiday_status_id.name,
                                         'number_of_days': 1,
-                                        'number_of_hours': working_hours_on_day,
+                                        #'number_of_hours': working_hours_on_day,
+                                        'number_of_hours': leave_type.number_of_hours_temp,
                                         'contract_id': contract.id,
                                     }
                                     
